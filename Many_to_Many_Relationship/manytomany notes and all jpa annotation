@@ -1,0 +1,58 @@
+
+Many-to-many mapping is an association between two entities /Objects
+where one instance of an entity/Object is associated with the multiple instances of another entity/Object and vice-versa
+
+
+
+@JoinColumn
+
+    The purpose of @JoinColumn is to create a join column if one does not already exist. 
+If it does, then this annotation can be used to name the join column.
+
+
+MappedBy
+
+    The purpose of the MappedBy parameter is to instruct JPA:
+ Do NOT create another join table as the relationship is already being mapped by the opposite entity of this relationship.
+
+
+
+ MappedBy is a property of the relationship annotations whose
+ purpose is to generate a mechanism to relate two entities which by default they do by creating a join table.
+ MappedBy halts that process in one direction.
+
+The entity not using MappedBy is said to be the owner of the relationship 
+@JoinColumn annotation over the foreign key which keeps it inside the table of the owner entity instead.
+@JoinColumn either creates a new join column or renames an existing one; 
+
+
+
+@Entity:
+The @Entity annotation is used to mark this class as an Entity bean and used for CRUD operation
+
+
+
+ @Table: @Table annotation is used to specify the table to persist the data. The name attribute refers to the table name. 
+If @Table annotation is not specified then Hibernate will by default use the class name as the table name. 
+
+
+The @Id annotation is used to specify the identifier property of the entity bean
+and it datatype should be int or long
+Note:id should not be string type otherwise you might get table creation exception
+
+
+@GeneratedValue:
+The @GeneratedValue annotation is used to specify the primary key generation strategy to use. 
+If the strategy is not specified by default AUTO will be used. 
+
+
+The @Column annotation is used to specify the details of the column to which a field or property will be mapped
+
+---------------------------------------------------
+all below annotation used in hibernate assocation 
+each of the below annotation used only for class type reference
+@OneToOne
+@OneToMany
+@ManyToOne
+@ManyToMany 
+
